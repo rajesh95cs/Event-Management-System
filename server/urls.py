@@ -19,10 +19,17 @@ Including another URLconf
 #urlpatterns = [
 #    url(r'^admin/', admin.site.urls),
 #]
+from django.contrib import admin
+from django.conf.urls import url
 from rest_framework.routers import DefaultRouter
 from Employee.views import EmployeeViewSet
+from Event.views import EventViewSet
+
 
 router = DefaultRouter()
 router.register(prefix='employees', viewset=EmployeeViewSet)
-
-urlpatterns = router.urls
+router.register(prefix='event', viewset=EventViewSet)
+urlpatterns = [
+   url(r'^admin/', admin.site.urls),
+]
+urlpatterns += router.urls
