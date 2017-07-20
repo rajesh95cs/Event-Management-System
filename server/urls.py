@@ -24,11 +24,12 @@ from django.conf.urls import url
 from rest_framework.routers import DefaultRouter
 from Employee.views import EmployeeViewSet
 from Event.views import EventViewSet
-
+from Registered_Events.views import Registered_Events_Viewset
 
 router = DefaultRouter()
 router.register(prefix='employees', viewset=EmployeeViewSet)
 router.register(prefix='event', viewset=EventViewSet)
+router.register(prefix='register-events',viewset=Registered_Events_Viewset)
 urlpatterns = [
    url(r'^admin/', admin.site.urls),
 ]
