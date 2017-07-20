@@ -7,7 +7,7 @@ class Event(models.Model):
     Event_description = models.CharField(max_length=100)
     Date_of_registration = models.DateTimeField(default=timezone.now)
     Date_of_Event = models.DateTimeField(default=timezone.now)
-    Lastdate_of_registration = models.DateTimeField(default=Date_of_Event)
+    Lastdate_of_registration = models.DateTimeField(default=timezone.now)
 
     #def __str__(self):
     #    return "%s" % self.Event_name
